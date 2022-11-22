@@ -2,7 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import {Header} from './components/Header'
 import {Footer} from './components/Footer'
-
+import { Routes, Route } from 'react-router-dom';
+//import page components
+import {Home} from './pages/Home'
+import {About} from './pages/About'
+import {Contact} from './pages/Contact'
+import { Route } from 'react-router-dom';
 
 const NavData = [
   { name: "Home", path:"/", public:true},
@@ -15,23 +20,12 @@ function App() {
     <div className="App">
 
       <Header title="My app" headernav={NavData} />
-      
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col">
-            <h3>Column 1</h3>
-          </div>
-          <div className="col">
-            <h3>Column 2</h3>
-          </div>
-          <div className="col">
-            <h3>Column 3</h3>
-          </div>
-        </div>
-      </div>
-
-      <Footer year="2022"/>
-
+      <Routes>
+        <Route path ="/" element={ <Home />} />
+        <Route path ="/about" element={ <About />} />
+        <Route path ="/contact" element={ <Contact />} />
+      </Routes>
+      <Footer year ="2022" />
     </div>
   );
 }

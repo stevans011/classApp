@@ -1,6 +1,7 @@
 import {useState,useEffect} from 'react'
 
 export function Navigation (props){
+    // NavLink collection returns a html code for each item in array
     const [navItems, setNavItems ] = useState([])
 
     useEffect ( () => {
